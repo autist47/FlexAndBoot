@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
+	<!-- Bootstrap CSS -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="new.css">
+</head>
+<body>
+<h1>Красота</h1>
+
+<div class="flex-container" style="justify-content: space-around;">
+		<label>
+			<input type="checkbox"  />
+			<div class="card">
+				<div class="front">Front</div>
+				<div class="back">Back</div>
+			</div>
+		</label>
+		<div class="trigger">
+			<div class="box"></div>
+		</div>
+		<div class="near">
+			<div class="round"></div>
+		</div>
+</div>
+		<div class="near2">
+			<div class="key"></div>
+		</div>
+		<h1 id="clock">00:00:00</h1>
+		<h3 id="color">00000</h3>
+<script type="text/javascript">
+		var clock=document.getElementById('clock');
+		var color=document.getElementById('color');
+		function hexoClock() {
+			var time = new Date();
+			var h = (time.getHours() % 12).toString();
+			var m = time.getMinutes().toString();
+			var s = time.getSeconds().toString();
+			if (h.length < 2) {
+				h = '0'+ h;
+			}
+			if (m.length < 2) {
+				m='0'+m;
+			}
+			if (s.length < 2) {
+				s='0'+s;
+			}
+			var clockString = h + ':' + m + ':' + s;
+			var colorString = '#'+h+m+s;
+			clock.innerHTML = clockString;
+			color.textContent = colorString;
+			document.body.style.backgroundColor=colorString;
+}	
+hexoClock();
+setInterval(hexoClock,1000);
+</script>
+<h1>Flexbox</h1>
+<h2>align-content(items) для container:</h2>
+<h2>align-self для element: (выравнивание элементов)</h2>
+<div class="flex-container fl1">
+	<div class="flex-element">1)flex-start</div>
+	<div class="flex-element">2)items:</div>
+	<div class="flex-element">3)stretch</div>
+	<div class="flex-element">4)center</div>
+	<div class="flex-element">5)flex-end</div>
+</div>
+<h2>flex-grown: (размер блока относительно 1)</h2>
+<div class="flex-container fl2">
+	<div class="flex-element">1)2</div>
+	<div class="flex-element">2)1</div>
+	<div class="flex-element">3)1</div>
+	<div class="flex-element">4)1</div>
+	<div class="flex-element">5)4</div>
+</div>
+<h2>order: (изменяет положение относительно 0)</h2>
+<div class="flex-container fl3">
+	<div class="flex-element">1)2</div>
+	<div class="flex-element">2)0</div>
+	<div class="flex-element">3)1</div>
+	<div class="flex-element">4)0</div>
+	<div class="flex-element">5)-1</div>
+</div>
+<h2>justify-content: (flex-end)</h2>
+<div class="flex-container fl4">
+	<div class="flex-element">1)1</div>
+	<div class="flex-element">2)2</div>
+	<div class="flex-element">3)3</div>
+	<div class="flex-element">4)4</div>
+	<div class="flex-element">5)5</div>
+</div>
+<h2>justify-content: (space-around)</h2>
+<div class="flex-container fl5">
+	<div class="flex-element">1)1</div>
+	<div class="flex-element">2)2</div>
+	<div class="flex-element">3)3</div>
+	<div class="flex-element">4)4</div>
+	<div class="flex-element">5)5</div>
+</div>
+<h2>justify-content: (space-between)</h2>
+<div class="flex-container fl6">
+	<div class="flex-element">1)1</div>
+	<div class="flex-element">2)2</div>
+	<div class="flex-element">3)3</div>
+	<div class="flex-element">4)4</div>
+	<div class="flex-element">5)5</div>
+</div>
+<h2>justify-content: (center)</h2>
+<div class="flex-container fl7">
+	<div class="flex-element">1)1</div>
+	<div class="flex-element">2)2</div>
+	<div class="flex-element">3)3</div>
+	<div class="flex-element">4)4</div>
+	<div class="flex-element">5)5</div>
+</div>
+<h1>Bootstrap</h1>
+	<div class="row">
+		<div class="col-md-4 m-x-auto">тут текст</div>
+		<div class="col-md-4">как и тут</div>
+		<div class="col-md-4">так издеся</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">дороу</div>
+		<div class="col-md-3">дороу</div>
+		<div class="col-md-3">дороу</div>
+		<div class="col-md-3">дороу</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="w-100"></div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">.col-md-8</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">.col-md-6</div>
+			<div class="col-md-6">.col-md-6</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1 112</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-md-8">no-gutters</div>
+			<div class="col-md-4">без padding</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">.col-md-6</div>
+			<div class="col-md-6">.col-md-6</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-8 push-lg-4">
+			<div class="row">
+				<div class="col-lg-8 justify-content-sm-center">Первый почти offset-4</div>
+				<div class="col-lg-4">Второй</div>
+			</div>
+		</div>
+		<div class="col-lg-4 pull-lg-8">Второй</div>
+	</div>
+
+	<div class="row" style="height:200px">
+		<div class="col align-self-start">верх</div>
+		<div class="col align-self-center">середина</div>
+		<div class="col align-self-end">низ</div>
+	</div>
+
+	<div class="row align-items-center"  style="height:200px">
+		<div class="col">все</div>
+		<div class="col">блоки</div>
+		<div class="col">по середине</div>
+	</div>
+
+
+	<div class="row justify-content-end">
+		<div class="col-4">слева, центр</div>
+		<div class="col-4">или вправо</div>
+	</div>
+	<div class="row justify-content-around">
+		<div class="col-3">around</div>
+		<div class="col-1">13</div>
+		<div class="col-3">или between</div>
+	</div>
+
+	<div class="row">
+		<div class="col">Первый неупорядоченный элемент</div>
+		<div class="col order-12">второй упорядоченный элемент,как 12</div>
+		<div class="col order-first">четвертый упорядоченный элемент,как first </div>
+		<div class="col order-1">третий упорядоченный элемент, как 1</div>
+	</div>
+</body>
+</html>	
